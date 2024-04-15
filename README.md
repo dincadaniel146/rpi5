@@ -22,7 +22,7 @@
 - MariaDB utilizat ca sistem de gestionare a bazei de date pentru a stoca si gestiona datele legate de site-ul web.
 - HTML pentru structura continutului
 - CSS pentru stilizarea anumitor componente si pentru layout
-- Javascript pentru adaugarea interactivitatii si comportamentului dinamic
+- Javascript pentru adaugarea interactivitatii si a comportamentului dinamic
 - Bootstrap utilizat pentru stilizarea componentelor, layout si design-ul responsive
 - Vite.Js pentru gestionarea de assets
 - Google Maps API pentru afisarea unei harti
@@ -35,11 +35,13 @@
 1. **Setup**:
 - Descarcati PHP: https://www.php.net/downloads
   Dupa descarcare, dezarhivati continutul fisierului intr-un folder si plasati folder-ul in C:\, de exemplu C:\php
-  Adaugati folder-ul PHP in path:
-  Accesați Start > Setări. În caseta de dialog Setări, tastați „variabile de mediu” în bara de căutare. Faceți clic pe Editați variabilele de mediu ale sistemului. Apare caseta de dialog System Properties.
+- Adaugati folder-ul PHP in path:
+  Accesați Start > Setări.
+  În caseta de dialog Setări, tastați „variabile de mediu” în bara de căutare.
+  Faceți clic pe Editați variabilele de mediu ale sistemului. Apare caseta de dialog System Properties.
   Faceți clic pe butonul Variabile de mediu. Apare dialogul Variabile de mediu.
   Selectați variabila Cale sub Variabile de sistem din jumătatea inferioară a ferestrei și apoi faceți clic pe Editare. Apare dialogul Editare variabile de mediu.
-  Adăugați ;C:\php la variabila cale. Faceți clic pe Ok pentru a confirma.
+  Adăugați C:\php la variabila cale. Faceți clic pe Ok pentru a confirma.
   Faceți clic pe Ok în dialogul Variabile de mediu.
   Reporniți toate ferestrele de linie de comandă deschise pentru ca noile setări să aibă efect. 
 - Instalati Composer: https://getcomposer.org/download/
