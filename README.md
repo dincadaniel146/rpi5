@@ -40,7 +40,7 @@
   În caseta de dialog Setări, tastați „variabile de mediu” în bara de căutare.
   Faceți clic pe Editați variabilele de mediu ale sistemului. Apare caseta de dialog System Properties.
   Faceți clic pe butonul Variabile de mediu. Apare dialogul Variabile de mediu.
-  Selectați variabila Cale sub Variabile de sistem din jumătatea inferioară a ferestrei și apoi faceți clic pe Editare. Apare dialogul Editare variabile de mediu.
+  Selectați variabila path sub Variabile de sistem din jumătatea inferioară a ferestrei și apoi faceți clic pe Editare. Apare dialogul Editare variabile de mediu.
   Adăugați C:\php la variabila cale. Faceți clic pe Ok pentru a confirma.
   Faceți clic pe Ok în dialogul Variabile de mediu.
   Reporniți toate ferestrele de linie de comandă deschise pentru ca noile setări să aibă efect. 
