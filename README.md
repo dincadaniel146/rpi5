@@ -7,6 +7,76 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Site Web de prezentare pentru Raspberry Pi 5
+
+- Site-ul web prezinta diverse aspecte ale Raspberry Pi, inclusiv caracteristicile sale, o scurta prezentare a sistemului de operare, proiecte realizate folosind Raspberry Pi si informatii de contact inclusiv o metoda de abonare la newsletter.
+
+## Caracteristici cheie
+- Meniu de navigare catre diferite sectiuni ale site-ului
+- Header care afiseaza un banner cu informatii despre Raspberry care include si un efect parallax la deplasarea cursorului.
+- Sectiuni precum "Noutati" cu noile caracteristici ale placutei, "Sistemul de operare" cu o scurta prezentare si un link catre descarcarea acestuia, "Proiecte" cu diferite realizari practice folosind Raspberry si sectiunea de "Contact" cu un camp de introducere a datelor pentru abonarea la un newsletter.
+- Footer cu diferite link-uri.
+
+## Tehnologii utilizate
+- Laravel 11 utilizat pentru dezvoltarea back-end cat si pentru interactiunile cu baza de date.
+- MariaDB utilizat ca sistem de gestionare a bazei de date pentru a stoca si gestiona datele legate de site-ul web.
+- HTML pentru structura continutului
+- CSS pentru stilizarea anumitor componente si pentru layout
+- Javascript pentru adaugarea interactivitatii si comportamentului dinamic
+- Bootstrap utilizat pentru stilizarea componentelor, layout si design-ul responsive
+- Vite.Js pentru gestionarea de assets
+- Google Maps API pentru afisarea unei harti
+- PHP folosit in cadrul Larravel pentru scriptare si procesare pe server
+- Composer pentru geestionarea dependentelor PHP in cadrul unui proiect Laravel
+- npm utilizat pentru gestionarea dependentelor Javascript 
+
+## Instructiuni de rulare a proiectului
+
+1. **Setup**:
+- Descarcati PHP: https://www.php.net/downloads
+  Dupa descarcare, dezarhivati continutul fisierului intr-un folder si plasati folder-ul in C:\, de exemplu C:\php
+  Adaugati folder-ul PHP in path:
+  Accesați Start > Setări. În caseta de dialog Setări, tastați „variabile de mediu” în bara de căutare. Faceți clic pe Editați variabilele de mediu ale sistemului. Apare caseta de dialog System Properties.
+  Faceți clic pe butonul Variabile de mediu. Apare dialogul Variabile de mediu.
+  Selectați variabila Cale sub Variabile de sistem din jumătatea inferioară a ferestrei și apoi faceți clic pe Editare. Apare dialogul Editare variabile de mediu.
+  Adăugați ;C:\php la variabila cale. Faceți clic pe Ok pentru a confirma.
+  Faceți clic pe Ok în dialogul Variabile de mediu.
+  Reporniți toate ferestrele de linie de comandă deschise pentru ca noile setări să aibă efect. 
+- Instalati Composer: https://getcomposer.org/download/
+- Instalati Node.js: https://nodejs.org/en/download
+- Instalati MariaDB:  https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.3.2&os=windows&cpu=x86_64&pkg=msi&mirror=chroot-network
+- Rulati utilizand Terminal pentru a clona proiectul: https://github.com/dincadaniel146/rpi5.git
+
+2. **Configurarea bazei de date**:
+- Intrati in Client-ul MySQL(instalat odata cu MariaDB) si conectati-va utilizand parola setata in timpul instalarii.
+- Creati o baza de date numita "tema1": 
+  CREATE DATABASE tema1;
+- Creati un utilizator numit "admin". Acest utilizator va fi folosit in Laravel pentru a citi din baza de date. Inlocuiti "1234" cu o parola sigura:
+  CREATE USER 'admin'@'localhost' IDENTIFIED BY '1234';
+  GRANT ALL PRIVILEGES ON tema1.* TO 'admin'@'localhost'
+- Creati un tabel in baza de date si indicati coloanele acestuia:
+  CREATE TABLE `newsletter` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nume` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `data_abonare` timestamp NOT NULL DEFAULT current_timestamp(),
+  `mesaj` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+)
+ - Actualizati fisierul .env din folder-ul radacina al proiectului sa foloseasca baza de date creata:
+ DB_DATABASE=tema1 
+ DB_USERNAME=admin
+ DB_PASSWORD=1234 (inlocuiti cu parola setata de dvs.)
+ 3. **Instalarea Dependentelor**
+ - Deschideti un Terminal in folderul radacina al proiectului
+ - Rulati: `composer install` pentru a instala dependentele PHP
+ - Rulati: `npm install` pentru a instala dependentele Javascript
+ 4. **Compilarea de assets**
+ - Rulati: `npm run dev` pentru a compila stilurile pentru pagina.
+ 5. **Rularea server-ului**
+ - Rulati `php artisan serve` pentru a porni server-ul Laravel
+ - Odata pornit, navigati catre localhost: http://127.0.0.1:8000
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
