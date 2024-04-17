@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <title>Bun venit !</title>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     </head>
     <body>
-   
+      <!-- Mesaj de confirmare -->
+    @if(session('success'))
+   <div id="mesaj-confirmare" class="alert alert-success " role="alert">
+  <strong>{{session('success')}}</strong>
+</div>
+<!-- Mesaj de eroare -->
+@elseif(session('error'))
+<div id="mesaj-confirmare" class="alert alert-danger " role="alert">
+  <strong>{{session('error')}}</strong>
+</div>
+@endif
+
     <nav class="navbar  navbar-expand-lg navbar-light" style="background: linear-gradient(to left, #eff2f7, #c7d0d9);">
   <div class="container">
     <!-- Logo -->
@@ -80,7 +90,7 @@
     <p class="card-text text-center lead fw-bold text-black-100 mb-4">Raspberry Pi este computerul tău mic și puternic. Dacă aveți nevoie de un hub inteligent pentru acasă, de un computer de personal sau dacă doriți să vizionați un film, puteți face totul cu Raspberry Pi.</p>
     <div class="d-flex justify-content-center">
 
-    <a href="#" class="btn btn-danger ">Cumpara acum</a>
+    <a href="https://www.raspberrypi.com/products/raspberry-pi-5/" class="btn btn-danger ">Cumpara acum</a>
 </div>
   </div>
 </div>
@@ -130,7 +140,7 @@
         <div class="my-5 text-center text-xl-start position-relative">
           <h1 class="display-5 fw-bolder text-white mb-2 z-index-1">Sistemul de operare Raspberry PI OS</h1>
           <p class="lead fw-bold text-white-50 mb-4 z-index-1">Raspberry Pi are nevoie de un sistem de operare pentru a funcționa. Asta este. Sistemul de operare Raspberry Pi (denumit anterior Raspbian) este sistemul nostru de operare acceptat oficial. </p>
-          <button type="button" class="btn btn-primary">Descarca</button>
+          <a href="https://www.raspberrypi.com/software/operating-systems/"><button type="button" action="" class="btn btn-primary">Descarca</button></a>
 
         </div>
       </div>
@@ -144,26 +154,25 @@
 
 
 <div id="proiecte" class="bg-dark py-5 position-relative" style="background-image: url('https://w0.peakpx.com/wallpaper/272/381/HD-wallpaper-minimalist-forms-colores-heart-pastel-pink-white.jpg')">
-<h1 class="text-center" style="padding-bottom: 10px;">
-      <span style="font-weight: light;">Proiecte interesante care folosesc Raspberry Pi</span>
+    <h1 class="text-center" style="padding-bottom: 10px;">
+        <span style="font-weight: light;">Proiecte interesante care folosesc Raspberry Pi</span>
     </h1>
-    <div class="col-md-3 mx-auto" style="padding-top:20px;padding-bottom:20px;">
 
-    <p class="text-center fw-bold text-black-50 mb-4">Indiferent dacă faci niște îmbunătățiri inteligente pentru casa sau vrei doar să injectezi puțină distracție în viața ta, avem ceva pe care îl poți construi ușor și la preț accesibil.</p>
-</div>
-<div class="mx-auto row row-cols- row-cols-md-3 g-3" style="width: 60rem; border-radius: 30px; ">
-  <div class="col">
-    <div class="card">
-      <img src="https://www.raspberrypi.com/tutorials/tutorials/images/hotspot/hero.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Găzduiește un hotspot Wi-Fi cu un Raspberry Pi</h5>
-        <p class="card-text">Acest hotspot Wi-Fi găzduit de Raspberry Pi se conectează la o rețea Wi-Fi pentru oaspeți, apoi rulează o rețea Wi-Fi privată separată pentru toate dispozitivele dvs.</p>
-        <a href="#"> Mai mult</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="row row-cols-1 row-cols-md-3 g-4 g-xl-4">
+                <div class="col d-flex justify-content-center">
+                    <div class="card text-center" style="width: 18rem;">
+                        <img src="https://www.raspberrypi.com/tutorials/tutorials/images/hotspot/hero.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Găzduiește un hotspot Wi-Fi cu un Raspberry Pi</h5>
+                            <p class="card-text">Acest hotspot Wi-Fi găzduit de Raspberry Pi se conectează la o rețea Wi-Fi pentru oaspeți, apoi rulează o rețea Wi-Fi privată separată pentru toate dispozitivele dvs.</p>
+                            <a href="#" class="btn btn-primary">Mai mult</a>
+                        </div>
+                    </div>
+                </div>
+  <div class="col d-flex justify-content-center">
+    <div class="card text-center" style="width: 18rem;">
       <img src="https://www.raspberrypi.com/tutorials/tutorials/images/MAGPI_ROUTER_002-800x533.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Blocați reclamele acasă cu Pi-hole</h5>
@@ -172,8 +181,8 @@
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card">
+  <div class="col d-flex justify-content-center">
+    <div class="card text-center" style="width: 18rem;">
       <img src="https://www.raspberrypi.com/tutorials/tutorials/images/Camera-Module-3-webcam-800x533.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Cameră web USB Raspberry Pi plug-and-play</h5>
@@ -182,18 +191,18 @@
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card">
+  <div class="col d-flex justify-content-center">
+    <div class="card text-center" style="width: 18rem;">
       <img src="https://www.raspberrypi.com/tutorials/tutorials/images/Antenna-scaled.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
+      <div class="card-body" style="height:240px;">
         <h5 class="card-title">Construiește-ți propria stație de recepție prin satelit meteo</h5>
         <p class="card-text">Construiți o stație de sol prin satelit cu Raspberry Pi și colectați date din spațiu.</p>
         <a href="#"> Mai mult</a>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card">
+  <div class="col d-flex justify-content-center">
+    <div class="card text-center" style="width: 18rem;">
       <img src="https://www.raspberrypi.com/tutorials/tutorials/images/Babbage-800x533.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Construiește-ți propriul tracker de zbor Raspberry Pi</h5>
@@ -202,8 +211,8 @@
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card">
+  <div class="col d-flex justify-content-center">
+    <div class="card text-center" style="width: 18rem;">
       <img src="https://www.raspberrypi.com/tutorials/tutorials/images/MAGIC-MIRROR-800x533.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Cum să construiești o oglindă inteligentă super-subțire</h5>
@@ -215,8 +224,8 @@
 </div>
 </div>
 
-
-
+</div>
+</div>
 
 
 
@@ -227,16 +236,17 @@
     <div style="padding-top:100px;">
       <h1 class="text-center">Abonați-vă la Raspberry Pi pentru rezumatul săptămânal al actualizărilor de produse și a proiectelor uimitoare</h1>
     </div>
-    <form style="padding-top: 100px;">
+    <form action="{{route('abonare')}}" method="POST" style="padding-top: 100px;">
+    @csrf
       <div class="d-flex flex-column align-items-center">
         <div class="form-group" style="padding-bottom: 20px; width: 300px;">
-          <label for="user">Nume</label>
-          <input type="text" class="form-control" id="user" placeholder="Introduceti numele">
+          <label for="nume">Nume</label>
+          <input type="text" class="form-control" id="nume"  name="nume" placeholder="Introduceti numele">
         </div>
         <div class="form-group" style="padding-bottom: 20px; width: 300px;">
-          <label for="Email">Adresa de mail</label>
-          <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Introduceti adresa de mail">
-          <small id="emailHelp" class="form-text text-muted">Nu vom împărtăși niciodată e-mailul tău cu nimeni altcineva.</small>
+          <label for="email">Adresa de mail</label>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Introduceti adresa de mail">
+          <small id="emailHelp" class="form-text text-muted">Nu vom împărtăși e-mailul tău cu nimeni altcineva.</small>
         </div>
       </div>
       <div class="d-flex justify-content-center" style="padding-top: 20px;">
@@ -275,8 +285,7 @@
 </body>
 </html>
 <script>
-
-
+//parallax
 document.addEventListener('mousemove', parallax);
 
 function parallax(e) {
@@ -291,10 +300,9 @@ function parallax(e) {
 
     </script>
     <script>
-        //Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// Cand derulam 20px din partea de sus a paginii afisam butonul
 window.onscroll = function () {
   scrollFunction();
 };
@@ -309,7 +317,7 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-// When the user clicks on the button, scroll to the top of the document
+// Inapoi sus
 mybutton.addEventListener("click", backToTop);
 
 function backToTop() {
@@ -317,3 +325,13 @@ function backToTop() {
   document.documentElement.scrollTop = 0;
 }
         </script>
+        <script>
+          //timeout alerta dupa 4s
+          document.addEventListener('DOMContentLoaded', function(){
+            const mesajconfirmare=document.getElementById('mesaj-confirmare');
+            mesajconfirmare.style.display='block';
+            setTimeout(function(){
+              mesajconfirmare.style.display='none';
+            }, 4000);
+          });
+          </script>
