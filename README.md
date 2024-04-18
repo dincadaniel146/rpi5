@@ -62,10 +62,6 @@
   `nume` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `data_abonare` timestamp NOT NULL DEFAULT current_timestamp(),
-<<<<<<< HEAD
-=======
-  `mesaj` varchar(255) DEFAULT NULL,
->>>>>>> a3306f1f75a235d117bdcad872f7011a3d611129
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
 )
@@ -77,11 +73,7 @@
  - Deschideti un Terminal in folderul radacina al proiectului
  - Rulati: `composer install` pentru a instala dependentele PHP
  - Rulati: `npm install` pentru a instala dependentele Javascript
-<<<<<<< HEAD
  4. **Assets**
-=======
- 4. **Compilarea de assets**
->>>>>>> a3306f1f75a235d117bdcad872f7011a3d611129
  - Rulati: `npm run dev` pentru a compila stilurile pentru pagina.
  5. **Rularea server-ului**
  - Rulati `php artisan serve` pentru a porni server-ul Laravel
