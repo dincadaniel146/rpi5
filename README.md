@@ -21,7 +21,6 @@
 - Laravel 11 utilizat pentru dezvoltarea back-end cat si pentru interactiunile cu baza de date.
 - MariaDB utilizat ca sistem de gestionare a bazei de date pentru a stoca si gestiona datele legate de site-ul web.
 - HTML pentru structura continutului
-- CSS pentru stilizarea anumitor componente si pentru layout
 - Javascript pentru adaugarea interactivitatii si a comportamentului dinamic
 - Bootstrap utilizat pentru stilizarea componentelor, layout si design-ul responsive
 - Vite.Js pentru gestionarea de assets
